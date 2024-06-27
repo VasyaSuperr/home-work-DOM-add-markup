@@ -12,6 +12,7 @@ body {
 }
 
 .news1 {
+  position: relative;
   box-shadow: 0 0 10px gray;
   padding: 20px;
   margin: 20px 0;
@@ -78,6 +79,27 @@ body {
 
 .trashIcon:hover {
   opacity: 0.5;
+}
+
+.likeIcon {
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0);
+  color: gray;
+}
+
+.likeIconPress {
+  color: yellow;
 }
 
 @media screen and (max-width: 400px) {

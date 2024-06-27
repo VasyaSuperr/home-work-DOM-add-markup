@@ -44,10 +44,10 @@ const listOfNews = document.createElement("ul");
 sectionOfList.append(listOfNews);
 
 news.forEach((novelty) => {
-  const news1 = document.createElement("li");
-  news1.classList.add("news1");
+  const breeze = document.createElement("li");
+  breeze.classList.add("news1");
 
-  listOfNews.append(news1);
+  listOfNews.append(breeze);
 
   const headerNews = document.createElement("div");
   headerNews.classList.add("headerNews");
@@ -71,11 +71,22 @@ news.forEach((novelty) => {
   trashIcon.innerHTML = `<i class="fa-solid fa-trash"></i>`;
 
   trashIcon.onclick = function () {
-    news1.remove();
+    breeze.remove();
   };
+
+  const likeIcon = document.createElement("button");
+  likeIcon.classList.add("likeIcon");
+  likeIcon.innerHTML = `<i class="fa-solid fa-heart"></i>`;
+
+  likeIcon.addEventListener("click", heartClickHandler);
+
+  function heartClickHandler(e) {
+    this.classList.toggle("likeIconPress");
+  }
+
   headerNews.append(title, headerBgSrc);
   btnAndDate.append(date, trashIcon);
-  news1.append(headerNews, category, body, btnAndDate);
+  breeze.append(headerNews, category, body, btnAndDate, likeIcon);
 });
 
 function createNewImg(src, alt, className) {
