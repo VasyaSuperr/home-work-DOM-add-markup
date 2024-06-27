@@ -43,34 +43,40 @@ const sectionOfList = document.querySelector(".sectionOfList");
 const listOfNews = document.createElement("ul");
 sectionOfList.append(listOfNews);
 
-const news1 = document.createElement("li");
-news1.classList.add("news1");
+news.forEach((novelty) => {
+  const news1 = document.createElement("li");
+  news1.classList.add("news1");
 
-listOfNews.append(news1);
+  listOfNews.append(news1);
 
-const headerNews = document.createElement("div");
-headerNews.classList.add("headerNews");
+  const headerNews = document.createElement("div");
+  headerNews.classList.add("headerNews");
 
-const title = createNewElement("h3", news[0].title, "titleNews");
-const headerBgSrc = createNewImg(news[0].headerBgSrc, "News image", "newsImg");
-const category = createNewElement("p", news[0].category, "categoryNews");
-const body = createNewElement("p", news[0].body, "bodyNews");
+  const title = createNewElement("h3", novelty.title, "titleNews");
+  const headerBgSrc = createNewImg(
+    novelty.headerBgSrc,
+    "News image",
+    "newsImg"
+  );
+  const category = createNewElement("p", novelty.category, "categoryNews");
+  const body = createNewElement("p", novelty.body, "bodyNews");
 
-const btnAndDate = document.createElement("div");
-btnAndDate.classList.add("btnAndDate");
+  const btnAndDate = document.createElement("div");
+  btnAndDate.classList.add("btnAndDate");
 
-const date = createNewElement("p", news[0].date, "dateNews");
+  const date = createNewElement("p", novelty.date, "dateNews");
 
-const trashIcon = document.createElement("button");
-trashIcon.classList.add("trashIcon");
-trashIcon.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+  const trashIcon = document.createElement("button");
+  trashIcon.classList.add("trashIcon");
+  trashIcon.innerHTML = `<i class="fa-solid fa-trash"></i>`;
 
-trashIcon.onclick = function () {
-  news1.remove();
-};
-headerNews.append(title, headerBgSrc);
-btnAndDate.append(date, trashIcon);
-news1.append(headerNews, category, body, btnAndDate);
+  trashIcon.onclick = function () {
+    news1.remove();
+  };
+  headerNews.append(title, headerBgSrc);
+  btnAndDate.append(date, trashIcon);
+  news1.append(headerNews, category, body, btnAndDate);
+});
 
 function createNewImg(src, alt, className) {
   const newImg = document.createElement("img");
