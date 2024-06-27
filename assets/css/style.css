@@ -11,11 +11,15 @@ body {
   padding: 10px;
 }
 
-.news1 {
+.breeze {
   position: relative;
   box-shadow: 0 0 10px gray;
   padding: 20px;
   margin: 20px 0;
+}
+
+.breezeClick {
+  box-shadow: 0 0 10px red;
 }
 
 .headerNews {

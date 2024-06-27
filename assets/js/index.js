@@ -45,7 +45,13 @@ sectionOfList.append(listOfNews);
 
 news.forEach((novelty) => {
   const breeze = document.createElement("li");
-  breeze.classList.add("news1");
+  breeze.classList.add("breeze");
+
+  breeze.addEventListener("click", newsClickHandler);
+
+  function newsClickHandler(e) {
+    breeze.classList.toggle("breezeClick");
+  }
 
   listOfNews.append(breeze);
 
@@ -82,6 +88,7 @@ news.forEach((novelty) => {
 
   function heartClickHandler(e) {
     this.classList.toggle("likeIconPress");
+    e.stopPropagation();
   }
 
   headerNews.append(title, headerBgSrc);
